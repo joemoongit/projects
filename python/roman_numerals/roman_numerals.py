@@ -4,11 +4,8 @@ class RomanNumeralizer:
     """
 
     def __init__(self, dictionary):
-        self.number = int(input("Enter integer to convert to roman numerals: "))
-        self.letter = ''
         self.dictionary = dictionary
 
-    # for readability
     def correct_nines(self, string):
         string = list(string)
         for i in range(len(string)-2):
@@ -17,10 +14,7 @@ class RomanNumeralizer:
                 string[i+2] = list(self.dictionary.keys())[list(self.dictionary.values()).index(self.dictionary[string[i+2]]*2)]
         return ''.join(string)
 
-    def return_roman_numerals(self, number = None):
-        if number:
-            self.number = number
-
+    def assign_roman_numerals(self):
         index, list_of_keys = 0, []
         for key, value in self.dictionary.items():
             list_of_keys += key
@@ -35,9 +29,14 @@ class RomanNumeralizer:
             index += 1
         return self.letter
 
+    def return_roman_numeral(self, number):
+        self.number = number
+        self.letter = ''
+        return self.correct_nines(self.assign_roman_numerals())
+
 if __name__ == "__main__":
 
     Dictionary = {"M":1000, "D":500, "C":100, "L":50, "X":10, "V":5, "I":1}
     
     r = RomanNumeralizer(Dictionary)
-    print(r.correct_nines(r.return_roman_numerals()))
+    print(r.return_roman_numeral(2019))
