@@ -14,6 +14,5 @@ class TestRomanNumeralizer(unittest.TestCase):
         assert self.r.convert_int_to_roman_numeral_characters(2019) == "MMXIX"
         assert self.r.convert_int_to_roman_numeral_characters(1976) == "MCMLXXVI"
 
-
 if __name__ == "__main__":
     unittest.main()
