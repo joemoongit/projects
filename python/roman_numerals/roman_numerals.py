@@ -1,3 +1,9 @@
+#
+# Converts an Integer into a String (in roman numerals)
+#
+# (c) Joseph Moon, 2018
+#
+
 class RomanNumeralizer:
     """
     Converts an integer input into its Roman Numeral equivalent
