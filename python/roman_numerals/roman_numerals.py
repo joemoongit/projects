@@ -13,7 +13,7 @@ class RomanNumeralizer:
         self.dictionary = dictionary
 
     def convert_int_to_roman_numeral_characters(self, _int):
-        self._characaters = ''
+        self._characaters = []
         return self._correct_nines(self._assign_roman_numerals(_int))
 
     def _correct_nines(self, _string):
@@ -37,7 +37,7 @@ class RomanNumeralizer:
                 self._characaters += list_of_keys[index-1]
                 _int = _int % value
             index += 1
-        return self._characaters
+        return ''.join(self._characaters)
 
 if __name__ == "__main__":
     Dictionary = {'M':1000, 'D':500, 'C':100, 'L':50, 'X':10, 'V':5, 'I':1}
